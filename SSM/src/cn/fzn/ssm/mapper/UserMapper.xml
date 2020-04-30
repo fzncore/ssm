@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="cn.fzn.ssm.mapper.UserMapper">
+  	<insert id="insert" parameterType="User" keyColumn="id" 
+  		keyProperty="id" useGeneratedKeys="true">
+  		insert into user (name,password,age) values (#{name},#{password},#{age}) 
+  	</insert>
+  	
+  	<select id="selectByPrimaryKey" parameterType="Integer" resultType="User">
+  		select * from user where id=#{id}
+  	</select>
+  	
+	<select id="selectList" resultType="User">
+		select * from user
+	</select>
+	  	
+  	<delete id="deleteByPrimaryKey" parameterType="Integer">
+  		delete from user where id=#{id}
+  	</delete>
+  	
+  	
+  </mapper>
