@@ -25,6 +25,7 @@ public class UserController {
 	
 	@RequestMapping("/delete")
 	public String delete(Integer userId) {
+		System.out.println("userId");
 		userService.deleteByPrimaryKey(userId);
 		return "redirect:/list.do";
 	}
